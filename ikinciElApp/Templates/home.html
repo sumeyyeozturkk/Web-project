@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% load static %}
+{% block content %}
+<center>
+<div class="container">
+	<h2>Welcome!</h2>
+	{% for pro in productlist %}
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Product Name</th>
+				<th>Product Price</th>
+				<th>Product Category</th>
+				<th>Product Brand</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>{{pro.product_name}}</td>
+				<td>{{pro.product_price}} TL</td>
+				<td>{{pro.product_category}}</td>
+				<td>{{pro.product_brand}}</td>
+			</tr>
+		</tbody>
+	</table>
+	{% endfor %}
+</div>
+</center>
+
+<center>
+<img src="https://yt3.ggpht.com/-KdgJnz1HIdQ/AAAAAAAAAAI/AAAAAAAAAAA/4vVN7slJqj4/s900-c-k-no-mo-rj-c0xffffff/photo.jpg" usemap="#image-map">
+
+<map name="image-map">
+    <area target="" alt="Apple" title="Apple" href="https://www.apple.com" coords="460,429,230" shape="circle">
+</map>
+</center> 
+
+<div class="container">
+	<center><textarea style="width: 600px;font-size: 25px;" cols="30" rows="5">{{ loc }}</textarea></center>
+
+</div>
+
+{% endblock %}
+
+
+
+          

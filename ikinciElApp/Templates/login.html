@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% block content %}
+<center>
+	<div class="jumbotron">
+    <div class="container">
+      <form class="form-signin" method="post" action="">
+        <h2 class="form-signin-heading">Please Login</h2>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          {% csrf_token %}
+        {% bootstrap_form form %}
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-12">
+          <p class="lead">
+            <button class="btn btn-success" type="submit">Login</button>
+          </p>
+        </div>
+      </form>
+    </div>
+	</div>
+</center>
+{% endblock %}

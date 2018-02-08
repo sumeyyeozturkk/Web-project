@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% load static %}
+{% block content %}
+<center>
+<div class="container">
+  <h2>Products!</h2>
+  {% for pro in productlist %}
+      <table class="table table-bordered" style="text-align: center;">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Product Price</th>
+          <th>Product Category</th>
+          <th>Product Brand</th>
+          <th>Product Picture</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{pro.product_name}}</td>
+          <td>{{pro.product_price}} TL</td>
+          <td>{{pro.product_category}}</td>
+          <td>{{pro.product_brand}}</td>
+          <td><img src="{{ pro.product_picture.url }}" width="120" height="100"> </td>
+        </tr>
+      </tbody>  
+    </table>
+   <a href="{% url 'basket' pro.id %}" class="btn btn-primary btn-sm" role="button">Add To Basket</a> 
+  {% endfor %}
+</div>
+</center>
+
+<center>
+{% if rand == 1 %}
+  <img src="{% static "pictures/1.jpg" %}" alt="" style="height: 500px; width: 300px; display: block; margin:10px;">
+{% elif rand == 2 %}
+  <img src="{% static "pictures/2.jpg" %}" alt="" style="height: 500px; width: 300px; display: block; margin:10px;">
+{% elif rand == 3 %}
+  <img src="{% static "pictures/3.jpg" %}" alt="" style="height: 500px; width: 300px; display: block; margin:10px;">
+{% elif rand == 4 %}
+  <img src="{% static "pictures/4.jpg" %}" alt="" style="height: 300px; width: 300px; display: block; margin:10px;">
+{% else %}
+  <img src="{% static "pictures/5.jpg" %}" alt="" style="height: 200px; width: 200px; display: block; margin:10px;">
+{% endif %}
+</center>
+
+{% endblock %}
