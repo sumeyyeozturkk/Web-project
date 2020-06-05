@@ -1,4 +1,4 @@
-Django==1.11
+Django==1.11.29
 psycopg2
 Pillow
 django-bootstrap3
